@@ -54,7 +54,7 @@ void info(){
     cout<<"Reserved2: "<<File.Reserved2<<endl;
     cout<<"Pozycja danych obrazkowych: "<<File.OffBits<<endl;
 
-    cout<<endl;
+    
 
     fseek(f, 14, SEEK_SET);
     fread(&Picture.Size, sizeof(Picture.Size), 1, f);
@@ -68,6 +68,7 @@ void info(){
     fread(&Picture.YPelsPerMeter, sizeof(Picture.YPelsPerMeter), 1, f);
     fread(&Picture.ClrUsed, sizeof(Picture.ClrUsed), 1, f);
     fread(&Picture.ClrImportant, sizeof(Picture.ClrImportant), 1, f);
+    cout<<endl;
     cout<<"Wielkosc naglowka informacyjnego: "<<Picture.Size<<endl;
     cout << "Szerokosc: " << Picture.Width << " pikseli" << endl;
     cout << "Wysokosc: " << Picture.Height << " pikseli" << endl;
@@ -79,7 +80,7 @@ void info(){
     cout<<"Liczba pikseli na metr: "<<Picture.YPelsPerMeter<<endl;
     cout<<"Liczba uzytych kolorow: "<<Picture.ClrUsed<<endl;
     cout<<"Liczba kolorow ktore sa wazne: "<<Picture.ClrImportant<<endl;
-
+    cout<<endl;
     fclose(f);
     }
 }
@@ -138,8 +139,8 @@ void negatyw(){
 
             
         }
-
-        cout<<"proces przebiegł pomyśnie"<<endl;
+        cout<<endl;
+        cout<<"proces przebiegł pomyślnie"<<endl;
        
     }
     fclose(f);
